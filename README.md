@@ -12,9 +12,9 @@ Major Weather Hacking is an app built using React and fetches weather of your cu
 ```bash
     └───src
     ├───App.js
+    ├───index.js
     ├───assets
     │   └───images
-            └───mlh-prep.png
             └───mlh-prep.png
     ├───components
     │   ├───MainNavbar
