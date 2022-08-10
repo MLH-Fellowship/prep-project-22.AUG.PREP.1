@@ -41,3 +41,5 @@ As per the figma design, this is the layout of the React app which we will be wo
 
 - We are using [**Tailwind CSS**](https://tailwindcss.com/) to handle all the stylings and [**React-Icons**](https://react-icons.github.io/react-icons/) for the icons as of now.
 
+- Create a branch with the issue you're assigned to and remember to pull before push
+
