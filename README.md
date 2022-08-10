@@ -3,7 +3,7 @@ Major Weather Hacking is an app built using React and fetches weather of your cu
 
 ## Installation
 1. Fork & Clone the Repository
-2. Check whether you have **Node** installed on your system `node --v`
+2. Check whether you have **Node** installed on your system `node -v`
 3. Steps for setting up the API key for openweathermap
 4. To generate an API key, you have to register on openweathermap:
 https://home.openweathermap.org/api_keys
