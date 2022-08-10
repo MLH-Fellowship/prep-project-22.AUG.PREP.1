@@ -1,11 +1,18 @@
-import { useEffect, useState } from "react";
-import logo from './assets/images/mlh-prep.png'
+import MainNavbar from "./components/MainNavbar";
+import Header from "./containers/Header/Header.container";
+import SecNavbar from "./components/SecNavbar";
+import Main from "./containers/Main/Main.container";
+import Footer from "./containers/Footer/Footer.container";
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="">
+      <MainNavbar />
+      <Header />
+      <SecNavbar />
+      <Main />
+      <Footer />
+    </div>
   )
 }
 

@@ -2,7 +2,9 @@ import React from 'react'
 
 const MainNavbar = () => {
   return (
-    <div>MainNavbar</div>
+    <div className='h-16 max-w bg-blue-900 text-center mt-0 pt-5'>
+      MainNavbar
+    </div>
   )
 }
 
