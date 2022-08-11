@@ -1,0 +1,18 @@
+h1 {
+  color: #133667;
+}
+
+.song {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.song-img {
+  width: 100%;
+  height: 66%;
+  color: #133667;
+}
+
+.song-logo {
+  margin: auto 3px;
+  height: 100%;
+}
