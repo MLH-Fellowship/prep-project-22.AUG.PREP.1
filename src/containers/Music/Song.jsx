@@ -11,7 +11,7 @@ const Song = ({ song }) => {
         <a
           href={song.artist.url}
           target={"_blank"}
-          className="hover:text-black"
+          className="hover:text-black cursor-pointer"
         >
           {song.artist.name}
         </a>
@@ -21,7 +21,7 @@ const Song = ({ song }) => {
         Listen to it on &nbsp;
         <a
           href={song.url}
-          className="text-amber-600 hover:italic"
+          className="text-amber-600 hover:italic cursor-pointer"
           target={"_blank"}
         >
           last.fm

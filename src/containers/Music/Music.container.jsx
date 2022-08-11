@@ -10,7 +10,6 @@ const Music = ({ country }) => {
 
   useEffect(() => {
     getSongs();
-    console.log(Songs);
   }, []);
 
   const getSongs = async () => {
