@@ -16,7 +16,7 @@ const Song = ({ song }) => {
           {song.artist.name}
         </a>
       </p>
-      <p className="flex items-cemter justify-center mx-auto my-2">
+      <p className="flex items-cemter justify-center mx-auto mt-auto mb-3">
         <FaHeadphonesAlt className="song-logo" />
         Listen to it on &nbsp;
         <a
