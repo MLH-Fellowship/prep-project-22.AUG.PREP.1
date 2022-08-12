@@ -9,7 +9,7 @@ export default function GeoLocation({ lat, long }) {
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metrics&appid=${API_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${API_KEY}`)
       .then(response => response.json())
       .then(data => {
         setResults(data)
@@ -17,17 +17,16 @@ export default function GeoLocation({ lat, long }) {
 
   }, [API_KEY, lat, long]);
 
+
   return (
     <>
       <Swiper
         spaceBetween={10}
-        slidesPerView={5}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}>
+        slidesPerView={5}>
 
         {results && (
-          results.daily.map(report => {
-            return <SwiperSlide><WeatherCard report={report} /></SwiperSlide>
+          results.daily.map((report, i) => {
+            return <SwiperSlide key={i}><WeatherCard report={report} /></SwiperSlide>
           })
         )}
 
