@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="">
       <MainNavbar />
-      <Header />
+      {/* <Header /> */}
       <SecNavbar />
       <Main />
       <Footer />

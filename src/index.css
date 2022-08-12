@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
 .form-inline {
 	display: inline-block;
@@ -27,34 +36,12 @@
 	color: #555;
 	padding-left: 0;
 	padding-right: 50px;
-	font-family: 'Merienda One', sans-serif;
 }
 .navbar .navbar-brand i {
 	font-size: 20px;
 	margin-right: 5px;
 }
-.search-box {
-	position: relative;
-}	
-.search-box input {
-	box-shadow: none;
-	padding-right: 35px;
-	border-radius: 3px !important;
-}
-.search-box .input-group-addon {
-	min-width: 35px;
-	border: none;
-	background: transparent;
-	position: absolute;
-	right: 0;
-	z-index: 9;
-	padding: 7px;
-	height: 100%;
-}
-.search-box i {
-	color: #a0a5b1;
-	font-size: 19px;
-}
+
 .navbar .nav-item i {
 	font-size: 18px;
 }

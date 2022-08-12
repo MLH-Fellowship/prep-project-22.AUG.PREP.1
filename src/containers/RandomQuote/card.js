@@ -11,6 +11,7 @@ export const Card = styled.div`
   text-align: center;
   border-radius: 10px;
   margin: 0 10px;
+  color: #53ffad;
 `;
 
 export const AdviceID = styled.h2`
