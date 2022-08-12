@@ -11,16 +11,11 @@
 	font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.form-inline {
-	display: inline-block;
-}
 .navbar-header.col {
 	padding: 0 !important;
 }
 .navbar {		
 	background: #fff;
-	padding-left: 16px;
-	padding-right: 16px;
 	border-bottom: 1px solid #d6d6d6;
 	box-shadow: 0 0 4px rgba(0,0,0,.1);
 }
@@ -28,14 +23,10 @@
 	border-radius: 50%;
 	width: 36px;
 	height: 36px;
-	margin: -8px 0;
-	float: left;
-	margin-right: 10px;
 }
 .navbar .navbar-brand {
 	color: #555;
 	padding-left: 0;
-	padding-right: 50px;
 }
 .navbar .navbar-brand i {
 	font-size: 20px;

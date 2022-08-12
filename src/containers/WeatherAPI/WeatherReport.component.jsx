@@ -10,8 +10,9 @@ export default function WeatherReport({ lat, long }) {
       .then((res) => res.json())
       .then((result) => {
         setResults(result);
+        console.log(results)
       });
-  }, [API_KEY, lat, long]);
+  }, [lat, long]);
   return (
     <>
       {results && (

@@ -1,5 +1,5 @@
+import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import MainNavbar from "./components/MainNavbar";
-import Header from "./containers/Header/Header.container";
 import SecNavbar from "./components/SecNavbar";
 import Main from "./containers/Main/Main.container";
 import Footer from "./containers/Footer/Footer.container";
@@ -7,11 +7,16 @@ import Footer from "./containers/Footer/Footer.container";
 function App() {
   return (
     <div className="">
-      <MainNavbar />
-      {/* <Header /> */}
-      <SecNavbar />
-      <Main />
-      <Footer />
+      <Router>
+        <MainNavbar />
+        <SecNavbar />
+
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+        </Routes>
+        
+        <Footer />
+      </Router>
     </div>
   );
 }
