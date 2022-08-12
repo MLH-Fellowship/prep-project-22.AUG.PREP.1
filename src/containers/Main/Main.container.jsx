@@ -1,6 +1,6 @@
 import React from "react";
 
-import WeatherApi from "../WeatherAPI/WeatherApi.component";
+import WeatherApi from "../WeatherAPI/WeatherApi.container";
 import RandomQuote from "../RandomQuote/RandomQuote.component";
 
 
