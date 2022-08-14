@@ -33,7 +33,7 @@ const Music = ({ country }) => {
 
   return (
     <>
-      <div className="songs flex flex-col justify-center items-center p-3 w-full mt-10 rounded-[10px]">
+      <div className="songs flex flex-col justify-center items-center p-5 w-11/12 md:w-10/12 mt-10 mx-auto rounded-[10px]">
         {Erorr ? (
           <h1 className="text-l py-2 text-red-700">
             Country name is invalid, please enter the name as defined by the ISO

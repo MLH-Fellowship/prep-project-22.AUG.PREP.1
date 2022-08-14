@@ -2,31 +2,31 @@ h1 {
   color: #133667;
 }
 
-.songs {
+.Trips {
   background-image: url("../../assets/images/music.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.song {
+.trip {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
   min-width: 240px;
   transition: transform 0.3s ease-in-out;
 }
 
-.song:hover {
+.trip:hover {
   background-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
 }
 
-.song-img {
+.trip-img {
   width: 100%;
   height: 66%;
   color: #133667;
 }
 
-.song-logo {
+.trip-logo {
   margin: auto 3px;
   height: 100%;
 }
