@@ -2,36 +2,69 @@ h1 {
   color: #133667;
 }
 
-.Trips {
-  background-image: url("../../assets/images/music.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .trip {
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
-  min-width: 240px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.trip:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+  max-width: 400px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .trip-img {
   width: 100%;
   height: 66%;
-  color: #133667;
 }
 
 .trip-logo {
   margin: auto 3px;
   height: 100%;
+  font-size: larger;
 }
 
-.song a:hover {
+.trip-info {
   color: #133667;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.5rem 1rem 1rem;
+}
+.trip-info h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.trip-info h6 {
+  background-color: #133667;
+  color: white;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.overview {
+  background-color: #fff;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 70%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+}
+
+.overview a {
+  background-color: #133667;
+  color: white;
   text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.trip:hover .overview {
+  transform: translateY(0);
 }

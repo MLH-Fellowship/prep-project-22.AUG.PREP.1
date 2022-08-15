@@ -1,33 +1,26 @@
 import "./styles.css";
-import { FaHeadphonesAlt } from "react-icons/fa";
-import { FiMusic } from "react-icons/fi";
+import { FaWikipediaW } from "react-icons/fa";
 
 const Trip = ({ trip }) => {
   return (
-    <div className="trip bg-transparent flex flex-col justify-center items-start flex-1 m-4 rounded-lg h-96">
-      <FiMusic className="trip-img" />
-      <p className="text-lg font-bold mx-4 mt-2">{trip.name}</p>
-      <p className="text-sm text-neutral-600 mx-4 ">
-        by &nbsp;
+    <div className="trip">
+      <img className="trip-img" src={trip.image} alt="image" />
+      <div className="trip-info">
+        <h1 className="p-2 my-1">{trip.name}</h1>
+        <h6 className="p-2 my-1">#{trip.kind}</h6>
+        <p className="p-2 my-1">{trip.address}</p>
+      </div>
+      <div className="overview">
+        <p className="p-2 my-1">{trip.details}</p>
         <a
-          href={trip.artist.url}
-          target={"_blank"}
-          className="hover:text-black cursor-pointer"
+          className="flex items-cemter justify-center p-2 my-1"
+          href={trip.wikipedia_page}
+          target="_blank"
         >
-          {trip.artist.name}
+          <FaWikipediaW className="trip-logo" />
+          wikipedia page
         </a>
-      </p>
-      <p className="flex items-cemter justify-center mx-auto mt-auto mb-3">
-        <FaHeadphonesAlt className="trip-logo" />
-        Listen to it on &nbsp;
-        <a
-          href={trip.url}
-          className="text-amber-400 hover:italic cursor-pointer"
-          target={"_blank"}
-        >
-          last.fm
-        </a>
-      </p>
+      </div>
     </div>
   );
 };
