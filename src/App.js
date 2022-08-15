@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/hotel" element={<Hotels />} />
           <Route path="/traffic" element={<Traffic />} />
-          <Route path="/music" element={<Music country={"India"} />} />
+          <Route path="/music" element={<Music />} />
           <Route path="/trips" element={<Travel />} />
         </Routes>
 
