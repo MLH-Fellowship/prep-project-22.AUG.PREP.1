@@ -30,3 +30,8 @@ h1 {
   margin: auto 3px;
   height: 100%;
 }
+
+.song a:hover {
+  color: #133667;
+  text-decoration: none;
+}

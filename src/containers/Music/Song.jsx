@@ -3,7 +3,7 @@ import { FaHeadphonesAlt } from "react-icons/fa";
 import { FiMusic } from "react-icons/fi";
 const Song = ({ song }) => {
   return (
-    <div className="song bg-transparent flex flex-col justify-center items-start flex-1 m-4 rounded-lg h-96">
+    <div className="song bg-transparent flex flex-col justify-center items-start flex-1 m-4 p-1 rounded-lg h-96">
       <FiMusic className="song-img" />
       <p className="text-lg font-bold mx-4 mt-2">{song.name}</p>
       <p className="text-sm text-neutral-600 mx-4 ">
