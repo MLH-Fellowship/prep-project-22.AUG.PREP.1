@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/images/mlh-prep.png'
-import { IoSearchOutline } from 'react-icons/io5'
+
 const MainNavbar = () => {
 	return (
 		<div>
@@ -9,7 +9,7 @@ const MainNavbar = () => {
 			</div>
 			<nav className="navbar navbar-default">
         <div className="navbar-header">
-          <a className="navbar-brand">SEARCH <b>What's on your mind!</b></a>  		
+          <p className="navbar-brand">SEARCH <b>What's on your mind!</b></p>  		
           <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
             <span className="navbar-toggler-icon" />
             <span className="icon-bar" />
