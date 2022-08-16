@@ -1,0 +1,9 @@
+.suggestions {
+    background-color: black;
+    color: white;
+}
+
+.suggestion-active {
+    background-color: #4d4d4d;
+    color: white;
+}
