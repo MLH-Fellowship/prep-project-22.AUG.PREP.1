@@ -7,8 +7,6 @@ export default function WeatherCard({ report }) {
     const temp = (report.temp.day - 273.15).toFixed(1)
     const weatherType = report.weather[0].main
     const time = new Date(report.dt * 1000).toLocaleDateString("en-UK")
-    console.log(report);
-    const url1 = "https://source.unsplash.com/random/?kolkata"
 
     return (
         <div className="bg-cyan-100/60 w-full h-64 border-2 border-black rounded-[10px] mr-5 text-base flex flex-col justify-center items-center">
