@@ -6,7 +6,6 @@ import "swiper/css";
 export default function GeoLocation({ lat, long }) {
   const API_KEY = process.env.REACT_APP_APIKEY;
   const [results, setResults] = useState(null);
-
   useEffect(() => {
     fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${API_KEY}`

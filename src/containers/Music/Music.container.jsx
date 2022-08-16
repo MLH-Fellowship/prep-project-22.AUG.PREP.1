@@ -40,6 +40,7 @@ const Music = () => {
         format: "json",
         limit: "3",
         api_key: process.env.REACT_APP_MUSIC_APIKEY,
+
         country: Location.country,
       },
     });
