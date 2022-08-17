@@ -60,7 +60,7 @@ const Music = () => {
             Country name is invalid, Country name is not as defined by the ISO
             3166-1 country names standard
           </h1>
-        ) : Songs.length == 0 ? (
+        ) : Songs.length === 0 ? (
           <h1 className="text-xl py-2 font-semibold">Loading songs ... </h1>
         ) : (
           <>
