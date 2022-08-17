@@ -2,6 +2,7 @@ import "./styles.css";
 import { FaHeadphonesAlt } from "react-icons/fa";
 import { FiMusic } from "react-icons/fi";
 const Song = ({ song }) => {
+  console.log(song)
   return (
     <div className="song bg-transparent flex flex-col justify-center items-start flex-1 m-4 p-1 rounded-lg h-96">
       <FiMusic className="song-img" />
@@ -11,6 +12,7 @@ const Song = ({ song }) => {
         <a
           href={song.artist.url}
           target={"_blank"}
+          rel="noreferrer"
           className="hover:text-black cursor-pointer"
         >
           {song.artist.name}
@@ -23,6 +25,7 @@ const Song = ({ song }) => {
           href={song.url}
           className="text-amber-400 hover:italic cursor-pointer"
           target={"_blank"}
+          rel="noreferrer"
         >
           last.fm
         </a>
