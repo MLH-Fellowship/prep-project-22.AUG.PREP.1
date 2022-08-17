@@ -1,0 +1,16 @@
+# ---- Team JekyllJackels ----
+# Contains the required set of build instructions for the required docker image.
+
+version: '3.4'
+services:
+    react-nginx-app:
+      stdin_open: true
+      build:
+        context: .
+        dockerfile: Dockerfile
+      expose:
+        - 8080
+      ports:
+        - 8080:80
+      environment:
+          - CHOKIDAR_USEPOLLING=true

@@ -1,0 +1,9 @@
+# ---- Team JekyllJackels ----
+# Docker ignore files such that node_modules and build folders 
+# are ignored while copying all the files
+
+node_modules
+build
+.dockerignore
+Dockerfile
+Dockerfile.prod
