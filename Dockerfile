@@ -26,4 +26,4 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=build-stage /usr/mwh/build . 
 
-ENTRYPOINT [ "nginx" , "-g", "daemon off;"]
+ENTRYPOINT [ "nginx" , "-g", "daemon off;"] 
