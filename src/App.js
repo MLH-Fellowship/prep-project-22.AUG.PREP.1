@@ -4,7 +4,7 @@ import SecNavbar from "./components/SecNavbar";
 import Main from "./containers/Main/Main.container";
 import Footer from "./containers/Footer/Footer.container";
 import Hotels from "./containers/Hotels/location";
-import Traffic from "./containers/Traffic/Traffic.component";
+import Traffic from "./containers/Traffic/Location";
 import Music from "./containers/Music/Music.container";
 import Travel from "./containers/Travel/Travel.container";
 
