@@ -3,9 +3,10 @@ import MainNavbar from "./components/MainNavbar";
 import SecNavbar from "./components/SecNavbar";
 import Main from "./containers/Main/Main.container";
 import Footer from "./containers/Footer/Footer.container";
-import Hotels from "./containers/Hotels/Hotels.component";
+import Hotels from "./containers/Hotels/location";
+import Traffic from "./containers/Traffic/Location";
 import Music from "./containers/Music/Music.container";
-import Traffic from "./containers/Traffic/Traffic.component";
+import Travel from "./containers/Travel/Travel.container";
 
 function App() {
   return (
@@ -14,13 +15,14 @@ function App() {
         <MainNavbar />
         <SecNavbar />
         <Main />
-        
+
         <Routes>
           <Route path="/hotel" element={<Hotels />} />
-          <Route path="/music" element={<Music />} />
           <Route path="/traffic" element={<Traffic />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/trips" element={<Travel />} />
         </Routes>
-        
+
         <Footer />
       </Router>
     </div>
