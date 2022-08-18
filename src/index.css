@@ -116,3 +116,7 @@
 		width: 100%;
 }
 }
+
+.lottie{
+	object-fit: cover;
+}
