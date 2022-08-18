@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/images/mlh-prep.png'
 import Autocomplete from './Autocomplete'
 import suggestionGenerator from './CityAutocompleteGenerator'
@@ -7,6 +7,13 @@ import suggestionGenerator from './CityAutocompleteGenerator'
 // TODO: Hide autocomplete when clicking on non autocomplete parts of page
 
 const MainNavbar = () => {
+  const [city, setCity] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(city)
+  }
+
 	return (
 		<div>
 			<div className='h-70 w-full bg-blue-900 flex items-center justify-center p-4'>
