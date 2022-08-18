@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainNavbar from "./components/MainNavbar";
 import SecNavbar from "./components/SecNavbar";
 import Main from "./containers/Main/Main.container";
@@ -11,6 +11,7 @@ import Travel from "./containers/Travel/Travel.container";
 import Music from "./containers/Music/Music.container";
 import animationData from "./assets/images/loading.json";
 import animationData2 from "./assets/images/loading2.json";
+import Globe from "./containers/WorldClock/Globe";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -48,19 +49,17 @@ function App() {
             <Lottie options={defaultOptions2} height={200} width={200} />
           </div>
         ) : (
-
           <Router>
             <MainNavbar />
             <SecNavbar />
             <Main />
-
-            <Routes>
-              <Route path="/hotel" element={<Hotels />} />
-              <Route path="/music" element={<Music />} />
-              <Route path="/traffic" element={<Traffic />} />
-              <Route path="/trips" element={<Travel />} />
-            </Routes>
-
+        <Routes>
+          <Route path="/hotel" element={<Hotels />} />
+          <Route path="/traffic" element={<Traffic />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/trips" element={<Travel />} />
+          <Route path="/globe" element={<Globe />} />
+        </Routes>
             <Footer />
           </Router>)}
     </div>
