@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/images/mlh-prep.png'
+import pp from '../assets/images/profile_pic.png'
 import Autocomplete from './Autocomplete'
 import suggestionGenerator from './CityAutocompleteGenerator'
 
@@ -7,6 +8,13 @@ import suggestionGenerator from './CityAutocompleteGenerator'
 // TODO: Hide autocomplete when clicking on non autocomplete parts of page
 
 const MainNavbar = () => {
+  const [city, setCity] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(city)
+  }
+
 	return (
 		<div>
 			<div className='h-70 w-full bg-blue-900 flex items-center justify-center p-4'>
@@ -35,12 +43,7 @@ const MainNavbar = () => {
           </form>
           <ul className="nav navbar-nav navbar-right">
             <li className="dropdown">
-              <a href="#" data-toggle="dropdown" className="dropdown-toggle user-action"><img src="https://www.tutorialrepublic.com/examples/images/avatar/2.jpg" className="avatar" alt="Avatar" /> Paula Wilson <b className="caret" /></a>
-              <ul className="dropdown-menu">
-                <li><a href="#"><i className="fa fa-user-o" /> Profile</a></li>
-                <li className="divider" />
-                <li><a href="#"><i className="material-icons"></i> Logout</a></li>
-              </ul>
+              <a href="#" data-toggle="dropdown" className="dropdown-toggle user-action"><img src={pp} className="avatar" alt="Avatar" /> hello,</a>
             </li>
           </ul>
         </div>

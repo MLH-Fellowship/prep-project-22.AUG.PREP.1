@@ -14,7 +14,7 @@
 }
 
 .MLHFooter .fa {
-    padding: 20px;
+    padding: 18px;
     font-size: 25px;
     width: 60px;
     text-align: center;
@@ -55,11 +55,11 @@
 }
 
 .MLHFooter .copyright{
-    font-size: 16px;
+    font-size: 14px;
     color:#aaa;
 }
 
 .MLHFooter .podname{
-    font-size: 21px;
+    font-size: 15px;
     color: white;
 }
