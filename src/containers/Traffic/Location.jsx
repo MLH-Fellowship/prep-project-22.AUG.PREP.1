@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loading from '../../components/Loading/Loading.component';
 import Traffic from "./Traffic.component";
 
 const TrafficLocation = () => {
@@ -20,7 +21,7 @@ const TrafficLocation = () => {
       }
       return <Traffic zoom={15} center={location} apiKey={process.env.TRAFFIC_API_KEY}/>;
     }
-    return <>Latitude and Longitude are not received</>
+    return (<div style={{justifyContent: 'center', display: 'flex'}}><Loading /></div>);
   }
   return (
     <div>
