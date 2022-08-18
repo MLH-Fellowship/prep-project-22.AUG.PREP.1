@@ -7,6 +7,8 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 93%;
+  padding: 40px 40px 40px 40px;
 }
 
 .song {

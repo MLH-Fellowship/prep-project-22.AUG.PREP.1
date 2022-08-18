@@ -1,9 +1,9 @@
 .card{
-  margin: 2rem 2rem 2rem 0;
+  margin: 2rem 2rem 2rem 2rem;
   padding:1.5rem;
-  width:350px;
+  width:320px;
   transition: transform .3s ease;
-  box-shadow: 0 0 14px 2px;
+  box-shadow: 0 0 10px 0px;
   cursor: pointer;
   display:flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 
 .card:hover{
   transform: scale(1.08);
-  box-shadow: 0 0 28px 4px;
+  box-shadow: 0 0 20px 2px;
 
 }
 .card_title{
@@ -31,7 +31,7 @@
 
 .cards-container{
   display:flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
-
+  margin-left: 35px;
 }
