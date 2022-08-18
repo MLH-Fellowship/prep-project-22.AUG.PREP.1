@@ -4,12 +4,13 @@ import MainNavbar from "./components/MainNavbar";
 import SecNavbar from "./components/SecNavbar";
 import Main from "./containers/Main/Main.container";
 import Footer from "./containers/Footer/Footer.container";
-import Hotels from "./containers/Hotels/Hotels.component";
+import Lottie from 'react-lottie'
+import Hotels from "./containers/Hotels/location";
+import Traffic from "./containers/Traffic/Location";
+import Travel from "./containers/Travel/Travel.container";
 import Music from "./containers/Music/Music.container";
-import Traffic from "./containers/Traffic/Traffic.component";
-import Lottie from 'react-lottie';
-import animationData from './assets/images/loading.json';
-import animationData2 from './assets/images/loading2.json';
+import animationData from "./assets/images/loading.json";
+import animationData2 from "./assets/images/loading2.json";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -40,34 +41,28 @@ function App() {
 
   return (
     <div className="">
-      {loading ? (
-        <div className="flex flex-col h-screen justify-center">
-          <Lottie
-            options={defaultOptions}
-            width={400}
-            height={400}
-            className="lottie"
-            />
-          <Lottie
-            options={defaultOptions2}
-            width={300}
-            height={130}
-            className="lottie"
-          />
-        </div>) : (
-        <Router>
-          <MainNavbar />
-          <SecNavbar />
-          <Main />
+      {
+        loading ? (
+          <div className="flex flex-col justify-center h-screen items-center">
+            <Lottie options={defaultOptions} height={400} width={400} />
+            <Lottie options={defaultOptions2} height={200} width={200} />
+          </div>
+        ) : (
 
-          <Routes>
-            <Route path="/hotel" element={<Hotels />} />
-            <Route path="/music" element={<Music />} />
-            <Route path="/traffic" element={<Traffic />} />
-          </Routes>
+          <Router>
+            <MainNavbar />
+            <SecNavbar />
+            <Main />
 
-          <Footer />
-        </Router>)}
+            <Routes>
+              <Route path="/hotel" element={<Hotels />} />
+              <Route path="/music" element={<Music />} />
+              <Route path="/traffic" element={<Traffic />} />
+              <Route path="/trips" element={<Travel />} />
+            </Routes>
+
+            <Footer />
+          </Router>)}
     </div>
   );
 }

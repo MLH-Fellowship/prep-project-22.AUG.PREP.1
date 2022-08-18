@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import GeoLocation from "../../components/GeoLocation/GeoLocation.component";
+import HotelApi from "./Hotels.component";
 
-const WeatherApi = () => {
+const HotelsLocation = () => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
 
@@ -13,10 +13,10 @@ const WeatherApi = () => {
   }, []);
 
   return (
-    <div className="WeatherApi w-3/4 h-21 bg-gray-600 rounded-[10px] text-center p-8 mr-5">
-      {latitude && longitude && <GeoLocation lat={latitude} long={longitude} />}
+    <div>
+      {latitude && longitude && <HotelApi lat={latitude} long={longitude} />}
     </div>
   );
 };
 
-export default WeatherApi;
+export default HotelsLocation;

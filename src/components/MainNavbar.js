@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import logo from '../assets/images/mlh-prep.png'
+import Autocomplete from './Autocomplete'
+import suggestionGenerator from './CityAutocompleteGenerator'
+
+// TODO: Search bar moves up when showing autocomplete results
+// TODO: Hide autocomplete when clicking on non autocomplete parts of page
 
 const MainNavbar = () => {
   const [city, setCity] = useState('')
@@ -16,7 +21,7 @@ const MainNavbar = () => {
 			</div>
 			<nav className="navbar navbar-default">
         <div className="navbar-header">
-          <p className="navbar-brand">SEARCH <b>What's on your mind!</b></p>  		
+          <a className="navbar-brand">SEARCH <b>What's on your mind!</b></a>
           <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
             <span className="navbar-toggler-icon" />
             <span className="icon-bar" />
@@ -26,9 +31,12 @@ const MainNavbar = () => {
         </div>
 
         <div id="navbarCollapse" className="collapse navbar-collapse">
-          <form onSubmit={handleSubmit} className="navbar-form form-inline">
-            <div className="input-group search-box">								
-              <input type="text" value={city} onChange={(e) => setCity(e.target.value)} id="search" className="form-control" placeholder="Search by Name" />
+          <form className="navbar-form form-inline">
+            <div className="input-group search-box">
+              <Autocomplete
+                  suggestionGenerator={suggestionGenerator}
+                  minLength={3}
+              />
               <span className="input-group-addon"><i className="material-icons"></i></span>
             </div>
           </form>
