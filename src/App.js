@@ -9,6 +9,7 @@ import Music from "./containers/Music/Music.container";
 import Traffic from "./containers/Traffic/Traffic.component";
 import Lottie from 'react-lottie';
 import animationData from './assets/images/loading.json';
+import animationData2 from './assets/images/loading2.json';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -28,15 +29,30 @@ function App() {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
+  const defaultOptions2 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData2,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
 
   return (
     <div className="">
       {loading ? (
-        <div className="flex justify-center h-screen items-center">
+        <div className="flex flex-col h-screen justify-center">
           <Lottie
             options={defaultOptions}
-            height={400}
             width={400}
+            height={400}
+            className="lottie"
+            />
+          <Lottie
+            options={defaultOptions2}
+            width={300}
+            height={130}
+            className="lottie"
           />
         </div>) : (
         <Router>
