@@ -65,9 +65,9 @@ function App() {
         
         <Things />
         <Footer />
-      </Router>
+      </Router> 
+      )}
     </div>
   );
-}
 
 export default App;
