@@ -13,6 +13,7 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
+    "react-tilt": "^0.1.4",
     "three": "^0.118.3",
     "react-globe": "^5.0.2",
     "react-globe.gl": "^2.22.1",
