@@ -27,7 +27,7 @@ const Travel = () => {
     if (TripsIdx.length > 0) {
       getTripDetails(TripsIdx);
     }
-  }, [TripsIdx.length]);
+  }, [TripsIdx]);
 
   const getLocation = async () => {
     const res = await axios.get("http://ip-api.com/json/");
