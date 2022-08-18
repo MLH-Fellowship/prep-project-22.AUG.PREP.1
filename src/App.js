@@ -8,6 +8,8 @@ import Traffic from "./containers/Traffic/Location";
 import Music from "./containers/Music/Music.container";
 import Travel from "./containers/Travel/Travel.container";
 import Globe from "./containers/WorldClock/Globe";
+import Things from "./components/Things/Things";
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/globe" element={<Globe />} />
         </Routes>
 
+        <Things />
         <Footer />
       </Router>
     </div>
