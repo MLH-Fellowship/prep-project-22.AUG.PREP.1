@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/images/mlh-prep.png'
 
 const MainNavbar = () => {
+  const [city, setCity] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(city)
+  }
+
 	return (
 		<div>
 			<div className='h-70 w-full bg-blue-900 flex items-center justify-center p-4'>
@@ -19,9 +26,9 @@ const MainNavbar = () => {
         </div>
 
         <div id="navbarCollapse" className="collapse navbar-collapse">
-          <form className="navbar-form form-inline">
+          <form onSubmit={handleSubmit} className="navbar-form form-inline">
             <div className="input-group search-box">								
-              <input type="text" id="search" className="form-control" placeholder="Search by Name" />
+              <input type="text" value={city} onChange={(e) => setCity(e.target.value)} id="search" className="form-control" placeholder="Search by Name" />
               <span className="input-group-addon"><i className="material-icons"></i></span>
             </div>
           </form>
