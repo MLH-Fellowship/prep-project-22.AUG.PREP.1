@@ -1,6 +1,5 @@
 import React from "react";
 import { Wrapper } from "@googlemaps/react-wrapper";
-import { useEffect, useRef } from "react";
 import Map from "./Map.component.jsx";
 import "./Traffic.css";
 

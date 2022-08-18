@@ -1,9 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
-import { IoFastFoodOutline } from "react-icons/io5";
-import { IoMusicalNotesOutline } from "react-icons/io5";
-import { IoBusiness } from "react-icons/io5";
-import { IoCarSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { IoGlobeOutline, IoBusiness, IoCarSharp, IoMusicalNotesOutline } from "react-icons/io5";
 import { FaUmbrellaBeach } from "react-icons/fa";
 
 const SecNavbar = () => {
@@ -21,11 +18,11 @@ const SecNavbar = () => {
 
       <div className="text-white p-2 mx-8">
         <Link
-          to="/food"
+          to="/globe"
           className="w-28 h-24 flex flex-col m-2 p-3 rounded-xl hover:text-slate-200 focus:text-slate-200 hover:no-underline text-base font-bold items-center justify-center bg-blue-900"
         >
-          <IoFastFoodOutline className="m-2" size={28} />
-          Food
+          <IoGlobeOutline className="m-2" size={28} />
+          WorldClock
         </Link>
       </div>
 

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainNavbar from "./components/MainNavbar";
 import SecNavbar from "./components/SecNavbar";
 import Main from "./containers/Main/Main.container";
@@ -7,6 +7,7 @@ import Hotels from "./containers/Hotels/location";
 import Traffic from "./containers/Traffic/Location";
 import Music from "./containers/Music/Music.container";
 import Travel from "./containers/Travel/Travel.container";
+import Globe from "./containers/WorldClock/Globe";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/traffic" element={<Traffic />} />
           <Route path="/music" element={<Music />} />
           <Route path="/trips" element={<Travel />} />
+          <Route path="/globe" element={<Globe />} />
         </Routes>
 
         <Footer />
