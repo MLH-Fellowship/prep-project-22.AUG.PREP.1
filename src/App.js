@@ -12,6 +12,8 @@ import Music from "./containers/Music/Music.container";
 import animationData from "./assets/images/loading.json";
 import animationData2 from "./assets/images/loading2.json";
 import Globe from "./containers/WorldClock/Globe";
+import Things from "./components/Things/Things";
+
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -60,8 +62,10 @@ function App() {
           <Route path="/trips" element={<Travel />} />
           <Route path="/globe" element={<Globe />} />
         </Routes>
-            <Footer />
-          </Router>)}
+        
+        <Things />
+        <Footer />
+      </Router>
     </div>
   );
 }
