@@ -9,6 +9,7 @@ const WeatherApi = () => {
   const API_KEY = process.env.REACT_APP_APIKEY;
   const [loading, setLoading] = useState(false);
   const [city, setCity] = useState('');
+  const [state, setState] = useState('');
 
   const defaultOptions = {
     loop: true,
@@ -33,17 +34,21 @@ const WeatherApi = () => {
       .then(response => response.json())
       .then(data => {
         setCity(data[0].name)
+        setState(data[0].state)
         setLoading(false)
       });
 
   }, [API_KEY, latitude, longitude]);
 
+
+  const city22 = `https://source.unsplash.com/random/?${state}`
+
   return (
-    <div className="WeatherApi w-3/4 h-21 bg-gray-600 rounded-2xl p-8 mr-5">
-      {loading ? <div className="text-center"><Lottie options={defaultOptions} height={200} width={200} /></div>  : null}
-      {latitude && longitude && <h1 className="text-white m-4 font-light">Results for <b className="font-bold">{city}</b></h1>}
-      {latitude && longitude && <GeoLocation lat={latitude} long={longitude} />}
-    </div>
+    <>
+      <div style={{ backgroundImage: `URL(${city22})` }} className="WeatherApi w-3/4 h-21 rounded-2xl p-8 mr-5">
+        {latitude && longitude && <h1 className="text-white m-4 font-light">Results for <b className="font-bold">{city}</b></h1>}
+        {latitude && longitude && <GeoLocation lat={latitude} long={longitude} />}
+      </div></>
   );
 };
 
