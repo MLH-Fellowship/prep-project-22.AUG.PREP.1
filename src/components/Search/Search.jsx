@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Autocomplete from './Autocomplete';
 import { Link, Routes, Route, useNavigate } from 'react-router-dom';
-import SearchResults from '../SearchResults';
 
 const Search = ({ minLength, suggestionGenerator, placeholder }) => {
     const ref = React.useRef(null);
@@ -99,7 +98,6 @@ const Search = ({ minLength, suggestionGenerator, placeholder }) => {
                 {showSuggestions && <Autocomplete suggestions={suggestions} activeSuggestion={activeSuggestion} onClick={onSelect} />}
             </div>
         </form>
-        {search && <SearchResults city={search} />}
         </div>
     );
 };
