@@ -10,7 +10,7 @@ export default function WeatherCard({ report }) {
     localStorage.setItem("weather",  weatherType)
 
     return (
-        <div className="bg-cyan-100/60 w-full h-64 border-2 border-black rounded-[10px] mr-5 text-base flex flex-col justify-center items-center">
+        <div className="bg-cyan-100/80 w-full h-64 border-2 border-black rounded-[10px] mr-5 text-base flex flex-col justify-center items-center">
             <div className="flex">
                 <img src={`https://openweathermap.org/img/wn/${report.weather[0].icon}.png`} alt={weatherType} className='h-14 m-0' />
                 <h1 className="text-[20px] mg-0 pt-5 pl-2">{weatherType}</h1>
@@ -26,7 +26,7 @@ export default function WeatherCard({ report }) {
                     <p className="text-xl pl-5">{report.wind_speed}</p>
                 </div>
             </div>
-            <div className="w-full bg-gray-100 h-14 mt-3 rounded-b-lg">
+            <div className="w-full text-center bg-gray-100 h-14 mt-3 rounded-b-lg">
                 <p className="text-xl pt-2">{time}</p>
             </div>
         </div>

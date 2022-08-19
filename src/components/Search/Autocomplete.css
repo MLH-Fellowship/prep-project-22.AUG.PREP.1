@@ -1,6 +1,14 @@
 .suggestions {
     background-color: black;
     color: white;
+    position: absolute;
+    top: 100%;
+    min-width: 100%;
+    max-width: fit-content;
+}
+
+.suggestions-item {
+    width: fit-content;
 }
 
 .suggestion-active {

@@ -1,47 +1,46 @@
-
 .card-things {
-	border-radius: 15px;
-	height: 300px;
-	width: 90%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background: rgba(255, 255, 255, 0.1);
-	border-top: 1px solid rgba(255, 255, 255, 0.5);
-	border-left: 1px solid rgba(255, 255, 255, 0.5);
-	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(5px);
-  }
-  
-  .card-things:hover {
-	box-shadow: 5px 5px 25px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-things .icon {
-	width: 110px;
-	height: 110px;
-	margin-left: auto;
-	margin-right: auto;
-  }
-  
-  .desc {
-	color: black;
-	font-size: 16px;
-	text-align: center;
-  }
-  
-  @media (max-width: 508px) {
-	.card {
-	  display: flex;
-	  flex-direction: row;
-	}
-  }
+  border-radius: 12px;
+  height: 300px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
 
-  .cards {
-	text-align: center;
+.card-things:hover {
+  box-shadow: 5px 5px 25px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-things .icon {
+  width: 110px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desc {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (max-width: 508px) {
+  .card {
+    display: flex;
+    flex-direction: row;
   }
-  .card-wrapper {
-	display: inline-block;
-	margin: 10px;
-  }
+}
+
+.cards {
+  text-align: center;
+}
+.card-wrapper {
+  display: inline-block;
+  margin: 10px;
+}

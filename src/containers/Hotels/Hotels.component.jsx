@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./SocialCard.css";
 import SocialCard from "./SocialCard";
+import Lottie from 'react-lottie';
+import animationData2 from '../../assets/images/loading2.json';
 
 const options = {
   method: "GET",
@@ -10,8 +12,18 @@ const options = {
   },
 };
 
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData2,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
+
 function Hotels({ lat, long }) {
   const [hotel, setHotel] = useState([]);
+
   useEffect(() => {
     (async () => {
       const today = new Date();
@@ -32,12 +44,16 @@ function Hotels({ lat, long }) {
       setHotel(entities);
     })();
   }, [lat, long]);
+
+  console.log(hotel)
+
   const Loader = () => {
-    if (hotel.length === 0) return <p>Loading hotels nearby you...!</p>;
+    if (hotel.length === 0) return <div className="text-center"><Lottie options={defaultOptions} height={200} width={200} /></div>;
     return <></>;
   };
+
   return (
-    <div className="cards-container">
+    <div className="flex justify-evenly flex-wrap">
       <Loader />
       {hotel.map((hotel, index) => (
         <SocialCard hotelData={hotel} key={index} />
