@@ -91,7 +91,7 @@ const Things = () => {
   return (
     <>
         <div className="cards" style={{ alignItems: "center" }}>
-          <h1 style={{ fontSize: "4rem", textAlign: "center", margin: "20px"}}>Don't forget these things!!</h1>
+          <h1 style={{ fontSize: "2.5rem", textAlign: "center", margin: "20px"}}>Don't forget to bring these things!</h1>
           {Objects &&
             Objects.map((object) => {
               let key = Object.keys(Objects).filter(function (key) {

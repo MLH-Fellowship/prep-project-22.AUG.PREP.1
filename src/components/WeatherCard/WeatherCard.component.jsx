@@ -26,7 +26,7 @@ export default function WeatherCard({ report }) {
                     <p className="text-xl pl-5">{report.wind_speed}</p>
                 </div>
             </div>
-            <div className="w-full bg-gray-100 h-14 mt-3 rounded-b-lg">
+            <div className="w-full text-center bg-gray-100 h-14 mt-3 rounded-b-lg">
                 <p className="text-xl pt-2">{time}</p>
             </div>
         </div>

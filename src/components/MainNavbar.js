@@ -15,14 +15,20 @@ const MainNavbar = () => {
     console.log(city)
   }
 
-	return (
-		<div>
-			<div className='h-70 w-full bg-blue-900 flex items-center justify-center p-4'>
-				<img style={{ width: "130px" }} alt="mlh-logo" src={logo} />
-			</div>
-			<nav className="navbar navbar-default">
+  return (
+    <div>
+      <div className='h-70 w-full bg-blue-900 flex items-center justify-center p-4'>
+        <img style={{ width: "130px" }} alt="mlh-logo" src={logo} />
+      </div>
+      <nav className="navbar navbar-default">
         <div className="navbar-header">
-          <a className="navbar-brand">SEARCH <b>What's on your mind!</b></a>
+          <div className="animatep">
+            <div className="titleWrapper">
+              <div className="titleId">SEARCH What's on your mind</div>
+              <div className="titleId">SEARCH For Weather</div>
+              <div className="titleId">SEARCH For Accomodations</div>
+            </div>
+          </div>
           <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
             <span className="navbar-toggler-icon" />
             <span className="icon-bar" />
@@ -35,13 +41,13 @@ const MainNavbar = () => {
           <Search suggestionGenerator={suggestionGenerator} minLength={3} placeholder={'Search by Name'}/>
           <ul className="nav navbar-nav navbar-right">
             <li className="dropdown">
-              <a href="#" data-toggle="dropdown" className="dropdown-toggle user-action"><img src={pp} className="avatar" alt="Avatar" /> hello,</a>
+              <a href="#" data-toggle="dropdown" className="dropdown-toggle user-action"><img src={pp} className="avatar" alt="Avatar" /> Hello,</a>
             </li>
           </ul>
         </div>
       </nav>
-		</div>
-	)
+    </div>
+  )
 }
 
 export default MainNavbar

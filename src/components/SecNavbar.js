@@ -5,7 +5,7 @@ import { FaUmbrellaBeach } from "react-icons/fa";
 
 const SecNavbar = () => {
   return (
-    <div className="flex items-center justify-center m-2">
+    <div className="flex items-center flex-wrap justify-center m-2">
       <div className="text-white p-2 mx-8">
         <Link
           to="/hotel"
