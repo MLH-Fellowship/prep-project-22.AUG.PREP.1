@@ -1,24 +1,12 @@
 import React, { useEffect, useState } from "react";
 import GeoLocation from "../../components/GeoLocation/GeoLocation.component";
-import Lottie from 'react-lottie';
-import animationData2 from '../../assets/images/loading2.json';
 
 const WeatherApi = () => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const API_KEY = process.env.REACT_APP_APIKEY;
-  const [loading, setLoading] = useState(false);
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData2,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
-  };
 
 
   useEffect(() => {
@@ -29,13 +17,13 @@ const WeatherApi = () => {
   }, []);
 
   useEffect(() => {
-    setLoading(true)
-    fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=2&appid=${API_KEY}`)
+      fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=2&appid=${API_KEY}`)
       .then(response => response.json())
       .then(data => {
         setCity(data[0].name)
         setState(data[0].state)
-        setLoading(false)
+        console.log(DataView)
+      
       });
 
   }, [API_KEY, latitude, longitude]);

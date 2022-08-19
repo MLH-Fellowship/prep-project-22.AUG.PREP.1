@@ -12,10 +12,10 @@ const Music = () => {
   });
   const [Songs, SetSongs] = useState([]);
   const [allSongs, SetAllSongs] = useState([]);
-  const [Erorr, SetErorr] = useState(null);
+  const [Error, SetError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://ip-api.com/json/").then(res =>{
+    axios.get("http://ip-api.com/json/").then(res => {
       SetLocation({
         country: res.data.country,
         lat: res.data.lat,
@@ -36,7 +36,7 @@ const Music = () => {
         },
       }).then(res => {
         if (res.data.error) {
-          SetErorr({ ...res.data });
+          SetError({ ...res.data });
         } else {
           SetSongs([...res.data.tracks.track]);
         }
@@ -45,22 +45,22 @@ const Music = () => {
   }, [Location]);
 
   useEffect(() => {
-      axios.get("https://ws.audioscrobbler.com/2.0/", {
-        params: {
-          method: "chart.gettoptracks",
-          format: "json",
-          limit: "18",
-          api_key: process.env.REACT_APP_MUSIC_APIKEY,
-        },
-      }).then(res => {
-        SetAllSongs([...res.data.tracks.track]);
-      })
+    axios.get("https://ws.audioscrobbler.com/2.0/", {
+      params: {
+        method: "chart.gettoptracks",
+        format: "json",
+        limit: "18",
+        api_key: process.env.REACT_APP_MUSIC_APIKEY,
+      },
+    }).then(res => {
+      SetAllSongs([...res.data.tracks.track]);
+    })
   }, []);
 
   return (
     <>
       <div className="songs flex flex-col justify-center items-center p-5 w-11/12 md:w-10/12 mt-10 mx-auto rounded-[10px]">
-        {Erorr ? (
+        {Error ? (
           <h1 className="text-l py-2 text-red-700">
             Country name is invalid, Country name is not as defined by the ISO
             3166-1 country names standard
