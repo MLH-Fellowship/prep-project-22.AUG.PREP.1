@@ -10,11 +10,6 @@ import Search from './Search/Search';
 const MainNavbar = () => {
   const [city, setCity] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(city)
-  }
-
   return (
     <div>
       <div className='h-70 w-full bg-blue-900 flex items-center justify-center p-4'>

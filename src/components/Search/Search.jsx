@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Autocomplete from './Autocomplete';
+import { Link, Routes, Route, useNavigate } from 'react-router-dom';
+import SearchResults from '../SearchResults';
 
 const Search = ({ minLength, suggestionGenerator, placeholder }) => {
     const ref = React.useRef(null);
@@ -8,6 +10,7 @@ const Search = ({ minLength, suggestionGenerator, placeholder }) => {
     const [suggestions, setSuggestions] = useState([]);
     const [activeSuggestion, setActiveSuggestion] = useState(0);
     const [showSuggestions, setShowSuggestions] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const clickHandler = (e) => {
@@ -74,8 +77,14 @@ const Search = ({ minLength, suggestionGenerator, placeholder }) => {
         }
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/');
+    }
+
     return (
-        <form className="navbar-form form-inline" ref={ref} onClick={onClick}>
+        <div>
+        <form className="navbar-form form-inline" ref={ref} onSubmit={handleSubmit} onClick={onClick}>
             <div className="input-group search-box">
                 <input
                     type='text'
@@ -86,10 +95,12 @@ const Search = ({ minLength, suggestionGenerator, placeholder }) => {
                     onKeyDown={onKeyDown}
                     value={search}
                 />
-                <span className="input-group-addon"><i className="material-icons"></i></span>
+                <button type="submit" className="input-group-addon"><i className="material-icons"></i></button>
                 {showSuggestions && <Autocomplete suggestions={suggestions} activeSuggestion={activeSuggestion} onClick={onSelect} />}
             </div>
         </form>
+        {search && <SearchResults city={search} />}
+        </div>
     );
 };
 

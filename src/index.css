@@ -13,6 +13,24 @@
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3a8a;
+}
 
 .form-inline {
   display: inline-block;

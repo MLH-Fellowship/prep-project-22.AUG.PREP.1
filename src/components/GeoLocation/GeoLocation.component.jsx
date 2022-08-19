@@ -9,7 +9,6 @@ export default function GeoLocation({ lat, long }) {
   const API_KEY = process.env.REACT_APP_APIKEY;
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [city, setCity] = useState('');
 
   const defaultOptions = {
     loop: true,
@@ -26,17 +25,6 @@ export default function GeoLocation({ lat, long }) {
       .then(response => response.json())
       .then(data => {
         setResults(data)
-        setLoading(false)
-      });
-
-  }, [API_KEY, lat, long]);
-
-  useEffect(() => {
-    setLoading(true)
-    fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&limit=2&appid=${API_KEY}`)
-      .then(response => response.json())
-      .then(data => {
-        setCity(data[0].name)
         setLoading(false)
       });
 
