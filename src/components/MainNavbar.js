@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import logo from '../assets/images/mlh-prep.png'
 import pp from '../assets/images/profile_pic.png'
-import Autocomplete from './Autocomplete'
-import suggestionGenerator from './CityAutocompleteGenerator'
+import suggestionGenerator from './CityAutocompleteGenerator';
+import Search from './Search/Search';
 
 // TODO: Search bar moves up when showing autocomplete results
 // TODO: Hide autocomplete when clicking on non autocomplete parts of page
@@ -32,15 +32,7 @@ const MainNavbar = () => {
         </div>
 
         <div id="navbarCollapse" className="collapse navbar-collapse">
-          <form className="navbar-form form-inline">
-            <div className="input-group search-box">
-              <Autocomplete
-                  suggestionGenerator={suggestionGenerator}
-                  minLength={3}
-              />
-              <span className="input-group-addon"><i className="material-icons"></i></span>
-            </div>
-          </form>
+          <Search suggestionGenerator={suggestionGenerator} minLength={3} placeholder={'Search by Name'}/>
           <ul className="nav navbar-nav navbar-right">
             <li className="dropdown">
               <a href="#" data-toggle="dropdown" className="dropdown-toggle user-action"><img src={pp} className="avatar" alt="Avatar" /> hello,</a>
