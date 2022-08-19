@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactGlobe from 'react-globe';
 import countriesJson from './CountryPoints/countries.json';
 import colorsJson from "./CountryPoints/colours.json";
@@ -6,7 +6,7 @@ import colorsJson from "./CountryPoints/colours.json";
 const countryInfoURL = "https://restcountries.com/v3.1/alpha/"
 
 const options = {
-  cameraRotateSpeed: 0.5,
+  cameraRotateSpeed: 1.8,
   focusAnimationDuration: 2000,
   focusEasingFunction: ['Linear', 'None'],
   pointLightColor: 'black',
@@ -15,7 +15,7 @@ const options = {
   markerTooltipRenderer: marker => `${marker.country}`,
 };
 
-export default function MyGlobe({setCountry,setCity,setInput}) {
+export default function MyGlobe () {
 
   const countries = JSON.parse(JSON.stringify(countriesJson));
   const colors = JSON.parse(JSON.stringify(colorsJson));
@@ -24,65 +24,47 @@ export default function MyGlobe({setCountry,setCity,setInput}) {
     ...marker,
     coordinates: [marker.latitude,marker.longitude],
     value: marker.numeric,
-    color: colors[i%130]["hex"],
+    color: colors[i%69]["hex"],
   }))
 
-  const [event, setEvent] = useState(null);
-  const [details, setDetails] = useState(null);
-  function onClickMarker(marker, markerObject, event) {
-    setEvent({
-      type: "CLICK",
-      marker,
-      markerObjectID: markerObject.uuid,
-      pointerEventPosition: { x: event.clientX, y: event.clientY }
-    });
-    setCountry(marker.country);
+  const [countryDetails, setCountry] = useState(null);
+  function onClickMarker(marker) {
     fetch(`${countryInfoURL}${marker.code}`)
     .then((res)=>res.json())
     .then((info)=>{
-      const country = info[0];
-      const capital = (country.capital === undefined || country.capital.length === 0) ? "" : country.capital[0];
-      setCity(capital);
-      setInput(capital);
-
+      const capital = (info[0].capital === undefined || info[0].capital.length === 0) ? "" : info[0].capital[0];
+      console.log(info[0])
+      setCountry({
+        country: marker.country,
+        capital: capital,
+        flag: info[0].flags.svg,
+        continent: info[0].continents[0],
+        timeZone: info[0].timezones[0],
+        currency: info[0].currencies[Object.keys(info[0].currencies)[0]]
+      });
     })
   }
-  function onDefocus(previousFocus) {
-    setEvent({
-      type: "DEFOCUS",
-      previousFocus
-    });
-    setDetails(null);
+
+  const Helper = () =>{
+    return (<div className=''>
+      <p>{countryDetails.country}'s capital is {countryDetails.capital} and it's currency is {countryDetails.currency["name"]} ({countryDetails.currency["symbol"]})</p> 
+      <img src={countryDetails.flag} alt="Country flag" style={{ width: "20px" }} />
+      <p>{countryDetails.timeZone} is the timezone</p>
+    </div>)
   }
 
   return (
     <div style={{margin : "0px 20px"}}>
-      {details && (
-        <div
-          style={{
-            background: "white",
-            position: "absolute",
-            fontSize: 20,
-            bottom: 0,
-            right: 0,
-            padding: 12
-          }}
-        >
-          <p>{details}</p>
-          <p>
-            EVENT: type={event.type}, position=
-            {JSON.stringify(event.pointerEventPosition)})
-          </p>
-        </div>
-      )}
       <ReactGlobe
         height="70vh"
         markers={defaultMarkers}
         options={options}
         width="100%"
         onClickMarker={onClickMarker}
-        onDefocus={onDefocus}
       />
+      {countryDetails &&
+      <Helper />
+      }
     </div>
 
 )}
